@@ -19,29 +19,30 @@ class MyMatrix {
   }
 
   straight() {
-    const getStraight = (numeroOrArray, condicion = true) => {
+    const getStraight = (numeroOrArray) => {
       if (! Array.isArray(numeroOrArray)) return null
 
-      if (! numeroOrArray.length) return null
-
       let straights = [];
+
       for (const numero of numeroOrArray) {
         straights.push(getStraight(numero))
       }
 
+      if (straights.every(straight => straight == null)) return straights.length
+
       straights.sort()
 
-      return straights.some(straight => straight.length !== straights[0])
+      if (straights[0] !== straights[straights.length -1]) throw 'Upsss'
 
-      if (straights.length > 1) {
-        
-      }
-      
-      return straights.length
-
+      return null
     }
 
-    return getStraight(this.matrix)
+    try {
+      getStraight(this.matrix)
+      return true
+    } catch (error) {
+      return false
+    }
   }
 
   compute() {
