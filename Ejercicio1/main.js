@@ -6,7 +6,7 @@ const e = [[[1, 2,3]], [[5, 6, 7],[5, 4, 3]], [[3, 5, 6], [4, 8, 3], [2, 3]]]
 const f = [[[1, 2, 3], [2, 3, 4]], [[5, 6, 7], [5, 4, 3]], [[3,5, 6], [4, 8, 3]]]
 
 const MyMatrix = require('./mi-matrix.js');
-let myMatrix = new MyMatrix(f);
-const compute = myMatrix.straight()
+let myMatrix = new MyMatrix(f); // se debe cambiar la variable para evaluar los casos o en su defecto ingresar el arreglo o matris manualmente
+const compute = myMatrix.straight() //cambiar metodo segun el test
 
 console.log(compute);
